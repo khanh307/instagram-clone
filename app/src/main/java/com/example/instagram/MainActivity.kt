@@ -12,46 +12,47 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    internal var selectedFragment: Fragment? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
+       override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         nav_view.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
-        supportFragmentManager.beginTransaction().replace(
-            R.id.fragment_container,
-            HomeFragment()
-        ).commit()
+        moveToFragment(HomeFragment())
     }
 
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.nav_home -> {
-                selectedFragment = HomeFragment()
+                moveToFragment(HomeFragment())
+                return@OnNavigationItemSelectedListener true
             }
             R.id.nav_search -> {
-                selectedFragment = SearchFragment()
+                moveToFragment(SearchFragment())
+                return@OnNavigationItemSelectedListener true
             }
             R.id.nav_add_post -> {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.nav_notifications -> {
-                selectedFragment = NotificationsFragment()
+                moveToFragment(NotificationsFragment())
+                return@OnNavigationItemSelectedListener true
             }
             R.id.nav_profile -> {
-                selectedFragment = ProfileFragment()
+                moveToFragment(ProfileFragment())
+                return@OnNavigationItemSelectedListener true
             }
-        }
-
-        if(selectedFragment != null){
-            supportFragmentManager.beginTransaction().replace(
-                R.id.fragment_container,
-                selectedFragment!!
-            ).commit()
         }
 
         false
+    }
+
+    private fun moveToFragment(fragment: Fragment){
+        val fragmentTransition = supportFragmentManager.beginTransaction()
+        fragmentTransition.replace(
+            R.id.fragment_container,
+            fragment
+        )
+        fragmentTransition.commit()
     }
 
 }
