@@ -85,7 +85,7 @@ class AccountSettingsActivity : AppCompatActivity() {
             TextUtils.isEmpty(full_name_profile_frag.text.toString()) -> Toast.makeText(this, "Please write full name", Toast.LENGTH_SHORT).show()
             TextUtils.isEmpty(user_name_profile_frag.text.toString()) -> Toast.makeText(this, "Please write user name", Toast.LENGTH_SHORT).show()
             TextUtils.isEmpty(bio_profile_frag.text.toString()) -> Toast.makeText(this, "Please write user name", Toast.LENGTH_SHORT).show()
-            imageUri == null -> Toast.makeText(this, "Please selected image", Toast.LENGTH_SHORT).show()
+            imageUri == null -> Toast.makeText(this, "Please select image", Toast.LENGTH_SHORT).show()
 
             else ->{
                 val progressDialog = ProgressDialog(this)
