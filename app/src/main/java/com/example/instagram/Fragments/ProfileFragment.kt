@@ -42,7 +42,39 @@ class ProfileFragment : Fragment() {
         }
 
         view.edit_account_settings_btn.setOnClickListener {
-            startActivity(Intent(context, AccountSettingsActivity::class.java))
+            val getButtonText = view.edit_account_settings_btn.text.toString()
+            when {
+                getButtonText == "Edit Profile" -> startActivity(Intent(context, AccountSettingsActivity::class.java))
+
+                getButtonText == "Follow" ->{
+                    firebaseUser?.uid.let { it1 ->
+                        FirebaseDatabase.getInstance().reference
+                            .child("Follow").child(it1.toString())
+                            .child("Following").child(profileId).setValue(true)
+                    }
+
+                    firebaseUser?.uid.let { it1 ->
+                        FirebaseDatabase.getInstance().reference
+                            .child("Follow").child(profileId)
+                            .child("Follower").child(it1.toString()).setValue(true)
+                    }
+                }
+
+                getButtonText == "Following" ->{
+                    firebaseUser?.uid.let { it1 ->
+                        FirebaseDatabase.getInstance().reference
+                            .child("Follow").child(it1.toString())
+                            .child("Following").child(profileId).removeValue()
+                    }
+
+                    firebaseUser?.uid.let { it1 ->
+                        FirebaseDatabase.getInstance().reference
+                            .child("Follow").child(profileId)
+                            .child("Follower").child(it1.toString()).removeValue()
+                    }
+                }
+            }
+
         }
 
         getFollowers()
@@ -122,9 +154,6 @@ class ProfileFragment : Fragment() {
 
         userRef.addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-                if(context != null){
-                    return
-                }
 
                 if(snapshot.exists()){
                     var user = snapshot.getValue<User>(User::class.java)
