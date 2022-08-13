@@ -5,12 +5,15 @@
       <map>
         <entry key="..\:/Users/Microsoft Windows/AndroidStudioProjects/Instagram/app/src/main/res/drawable/button_edit_profile.xml" value="0.14" />
         <entry key="..\:/Users/Microsoft Windows/AndroidStudioProjects/Instagram/app/src/main/res/drawable/button_follow.xml" value="0.14" />
+        <entry key="..\:/Users/Microsoft Windows/AndroidStudioProjects/Instagram/app/src/main/res/drawable/follow_selected.xml" value="0.14" />
         <entry key="..\:/Users/Microsoft Windows/AndroidStudioProjects/Instagram/app/src/main/res/layout/activity_account_settings.xml" value="0.25" />
         <entry key="..\:/Users/Microsoft Windows/AndroidStudioProjects/Instagram/app/src/main/res/layout/activity_add_post.xml" value="0.25" />
         <entry key="..\:/Users/Microsoft Windows/AndroidStudioProjects/Instagram/app/src/main/res/layout/activity_cropper_actitvity.xml" value="0.25" />
+        <entry key="..\:/Users/Microsoft Windows/AndroidStudioProjects/Instagram/app/src/main/res/layout/activity_follow.xml" value="0.25" />
         <entry key="..\:/Users/Microsoft Windows/AndroidStudioProjects/Instagram/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Microsoft Windows/AndroidStudioProjects/Instagram/app/src/main/res/layout/activity_sign_in.xml" value="0.2" />
         <entry key="..\:/Users/Microsoft Windows/AndroidStudioProjects/Instagram/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
+        <entry key="..\:/Users/Microsoft Windows/AndroidStudioProjects/Instagram/app/src/main/res/layout/follow_selected.xml" value="0.4921875" />
         <entry key="..\:/Users/Microsoft Windows/AndroidStudioProjects/Instagram/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/Microsoft Windows/AndroidStudioProjects/Instagram/app/src/main/res/layout/fragment_notifications.xml" value="0.25" />
         <entry key="..\:/Users/Microsoft Windows/AndroidStudioProjects/Instagram/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
@@ -18,6 +21,7 @@
         <entry key="..\:/Users/Microsoft Windows/AndroidStudioProjects/Instagram/app/src/main/res/layout/posts_layout.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/Microsoft Windows/AndroidStudioProjects/Instagram/app/src/main/res/layout/user_item_layout.xml" value="0.25" />
         <entry key="..\:/Users/Microsoft Windows/AndroidStudioProjects/Instagram/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
+        <entry key="..\:/Users/Microsoft Windows/AndroidStudioProjects/Instagram/app/src/main/res/menu/follow_menu.xml" value="0.4921875" />
       </map>
     </option>
   </component>

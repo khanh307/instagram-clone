@@ -9,4 +9,12 @@
         <item name="android:statusBarColor">@android:color/white</item>
     </style>
 
+    <style name="BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="BottomNavigationView.Active" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">22sp</item>
+    </style>
+
 </resources>

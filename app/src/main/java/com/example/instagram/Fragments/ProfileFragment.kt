@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.instagram.AccountSettingsActivity
+import com.example.instagram.FollowActivity
 import com.example.instagram.Model.User
 import com.example.instagram.R
 import com.google.firebase.auth.FirebaseAuth
@@ -77,12 +78,28 @@ class ProfileFragment : Fragment() {
 
         }
 
+        view.layout_follower.setOnClickListener {
+            val mIntent = Intent(context, FollowActivity::class.java)
+            mIntent.putExtra("ID", profileId)
+            mIntent.putExtra("selected", 1)
+            mIntent.putExtra("userName", view.profile_fragment_username.text.toString())
+            startActivity(mIntent)
+        }
+        view.layout_following.setOnClickListener {
+            val mIntent = Intent(context, FollowActivity::class.java)
+            mIntent.putExtra("ID", profileId)
+            mIntent.putExtra("selected", 2)
+            mIntent.putExtra("userName", view.profile_fragment_username.text.toString())
+            startActivity(mIntent)
+        }
+
         getFollowers()
         getFollowing()
         userInfo()
 
         return view
     }
+
 
     private fun checkFollowAndFollowingButtonStatus() {
         val followingRef = firebaseUser?.uid.let { it1 ->
