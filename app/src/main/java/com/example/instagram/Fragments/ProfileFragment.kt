@@ -135,7 +135,7 @@ class ProfileFragment : Fragment() {
         followersRef.addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()){
-                    view?.total_followers?.text = snapshot.childrenCount.toString()
+                    view?.total_followers?.text = (snapshot.childrenCount-1).toString()
                 }
             }
 
@@ -155,7 +155,7 @@ class ProfileFragment : Fragment() {
         followingsRef.addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()){
-                    view?.total_following?.text = snapshot.childrenCount.toString()
+                    view?.total_following?.text = (snapshot.childrenCount-1).toString()
                 }
             }
 

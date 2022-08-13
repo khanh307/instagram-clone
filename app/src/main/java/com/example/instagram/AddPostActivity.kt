@@ -120,7 +120,7 @@ class AddPostActivity : AppCompatActivity() {
         options.setFreeStyleCropEnabled(false)
 
         var uCrop = UCrop.of(uri, Uri.fromFile(File(cacheDir, destinationFileName)))
-            .withAspectRatio(3F, 2F)
+            .withAspectRatio(1F, 1F)
             .withMaxResultSize(450, 450)
             .withOptions(options)
             .start(this)

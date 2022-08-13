@@ -19,8 +19,8 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/user_profile_image_post"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:src="@drawable/profile"
                 android:padding="5dp"/>
 
@@ -43,13 +43,9 @@
         <ImageView
             android:id="@+id/post_image_home"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
+            android:layout_height="350dp"
             android:src="@drawable/profile"
-            android:scaleType="centerCrop"
-            />
-
-
-
+            android:scaleType="centerCrop"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
