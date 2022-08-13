@@ -65,7 +65,7 @@ class SearchFragment : Fragment() {
 
     private fun seachUser(input: String) {
         val query = FirebaseDatabase.getInstance().getReference().child("Users")
-            .orderByChild("fullname")
+            .orderByChild("username")
             .startAt(input).endAt(input+ "\uf8ff")
 
         query.addValueEventListener(object: ValueEventListener{

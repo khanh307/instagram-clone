@@ -71,7 +71,7 @@ class SignUpActivity : AppCompatActivity() {
 
         val userMap = HashMap<String, Any>()
         userMap["uid"] = currentUserID
-        userMap["fullname"] = fullName.toString().toLowerCase()
+        userMap["fullname"] = fullName.toString()
         userMap["username"] = userName.toString().toLowerCase()
         userMap["email"] = email
         userMap["bio"] = "hey i am using KhanhTQ Instagram Clone App."

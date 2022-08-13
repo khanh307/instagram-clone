@@ -65,28 +65,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:padding="10dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/pro_image_profile_frag"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:src="@drawable/profile"/>
+
                 <LinearLayout
-                    android:layout_width="190dp"
+                    android:layout_width="match_parent"
                     android:layout_height="90dp"
-                    android:layout_marginLeft="60dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="13dp"
                     android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
+                        android:weightSum="3"
                         android:orientation="horizontal">
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:id="@+id/layout_posts"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:orientation="vertical">
@@ -95,7 +98,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="0"
-                                android:textSize="12sp"
+                                android:textSize="14sp"
                                 android:textStyle="bold"
                                 android:textColor="@android:color/black"/>
 
@@ -103,13 +106,15 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Posts"
-                                android:textSize="12sp"
+                                android:textSize="13sp"
                                 android:textColor="@android:color/black"/>
 
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:id="@+id/layout_follower"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="7dp"
                             android:gravity="center"
@@ -119,21 +124,23 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="0"
-                                android:textSize="12sp"
+                                android:textSize="14sp"
                                 android:textStyle="bold"
                                 android:textColor="@android:color/black"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Followers"
-                                android:textSize="12sp"
+                                android:textSize="13sp"
                                 android:textColor="@android:color/black"/>
 
                         </LinearLayout>
 
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:id="@+id/layout_following"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="7dp"
                             android:gravity="center"
@@ -143,7 +150,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="0"
-                                android:textSize="12sp"
+                                android:textSize="14sp"
                                 android:textStyle="bold"
                                 android:textColor="@android:color/black"/>
 
@@ -151,7 +158,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Following"
-                                android:textSize="12sp"
+                                android:textSize="13sp"
                                 android:textColor="@android:color/black"/>
 
                         </LinearLayout>
@@ -159,15 +166,7 @@
 
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/edit_account_settings_btn"
-                        android:layout_width="170dp"
-                        android:layout_height="32dp"
-                        android:text="Edit profile"
-                        android:textAllCaps="false"
-                        android:layout_marginTop="2dp"
-                        android:layout_marginLeft="10dp"
-                        android:background="@drawable/buttons_background"/>
+
 
                 </LinearLayout>
 
@@ -175,7 +174,8 @@
 
             <LinearLayout
                 android:id="@+id/mid_bar"
-                android:padding="12dp"
+                android:padding="5dp"
+                android:layout_marginLeft="6dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -198,11 +198,22 @@
 
             </LinearLayout>
 
+            <Button
+                android:id="@+id/edit_account_settings_btn"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:text="Edit profile"
+                android:textAllCaps="false"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/button_edit_profile"
+                android:textColor="@android:color/black"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:background="@drawable/button_black_background"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp">
@@ -210,7 +221,7 @@
                 <ImageButton
                     android:id="@+id/images_grid_view_btn"
                     android:layout_width="1dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:src="@drawable/grid"
                     android:layout_weight="1"
                     style="?android:attr/buttonBarButtonStyle"/>
@@ -218,7 +229,7 @@
                 <ImageButton
                     android:id="@+id/images_save_btn"
                     android:layout_width="1dp"
-                    android:layout_height="49dp"
+                    android:layout_height="50dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/save_large_icon"
                     android:layout_weight="1"

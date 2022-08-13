@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Microsoft Windows/AndroidStudioProjects/Instagram/app/src/main/res/drawable/button_edit_profile.xml" value="0.14" />
+        <entry key="..\:/Users/Microsoft Windows/AndroidStudioProjects/Instagram/app/src/main/res/drawable/button_follow.xml" value="0.14" />
         <entry key="..\:/Users/Microsoft Windows/AndroidStudioProjects/Instagram/app/src/main/res/layout/activity_account_settings.xml" value="0.25" />
         <entry key="..\:/Users/Microsoft Windows/AndroidStudioProjects/Instagram/app/src/main/res/layout/activity_add_post.xml" value="0.25" />
         <entry key="..\:/Users/Microsoft Windows/AndroidStudioProjects/Instagram/app/src/main/res/layout/activity_cropper_actitvity.xml" value="0.25" />
