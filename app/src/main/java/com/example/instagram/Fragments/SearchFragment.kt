@@ -49,7 +49,7 @@ class SearchFragment : Fragment() {
 
                 } else{
                     recyclerView?.visibility = View.VISIBLE
-                    retrieveUsers()
+                //    retrieveUsers()
                     seachUser(s.toString().toLowerCase())
                 }
             }

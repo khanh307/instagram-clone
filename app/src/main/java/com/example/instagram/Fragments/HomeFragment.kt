@@ -1,6 +1,7 @@
 package com.example.instagram.Fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -31,6 +32,7 @@ class HomeFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recycler_view_home)
         val linearLayoutManager = LinearLayoutManager(context)
         linearLayoutManager.reverseLayout = true
+        linearLayoutManager.stackFromEnd = true
         recyclerView.layoutManager = linearLayoutManager
 
         postList = ArrayList()
@@ -84,6 +86,7 @@ class HomeFragment : Fragment() {
                     for(id in (followingList as ArrayList<String>)){
                         if(post!!.getPublisher() == id){
                             postList!!.add(post)
+                            Log.d("EEE", post.getDescription().toString())
                         }
 
                         postAdapter!!.notifyDataSetChanged()

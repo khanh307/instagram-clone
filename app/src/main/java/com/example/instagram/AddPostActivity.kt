@@ -71,7 +71,7 @@ class AddPostActivity : AppCompatActivity() {
 
                         val postMap = HashMap<String, Any>()
                         postMap["postid"] = postId!!
-                        postMap["descripton"] = description_post.text.toString()
+                        postMap["description"] = description_post.text.toString()
                         postMap["publisher"] = FirebaseAuth.getInstance().currentUser!!.uid
                         postMap["postimage"] = myUrl
 

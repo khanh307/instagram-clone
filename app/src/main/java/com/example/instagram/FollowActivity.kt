@@ -91,7 +91,6 @@ class FollowActivity : AppCompatActivity() {
                             override fun onDataChange(snapshot1: DataSnapshot) {
                                 if(snapshot1.exists()){
                                     var user = snapshot1.getValue<User>(User::class.java)
-                                    Log.d("EEE", user!!.getUid())
                                     if(user!!.getUid() != profileId){
                                         followerArray!!.add(user)
                                     }
