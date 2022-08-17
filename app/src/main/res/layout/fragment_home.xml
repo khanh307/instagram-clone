@@ -28,9 +28,9 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
-                    android:src="@drawable/send_icon"
+                    android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
-                    android:layout_alignParentRight="true"/>
+                    android:src="@drawable/send_icon" />
 
             </RelativeLayout>
 
@@ -39,6 +39,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:padding="3dp"
         android:id="@+id/recycler_view_home"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

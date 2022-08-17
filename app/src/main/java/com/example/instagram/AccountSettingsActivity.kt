@@ -75,6 +75,10 @@ class AccountSettingsActivity : AppCompatActivity() {
                 updateUserInfoOnly()
             }
         }
+
+        close_profile_btn.setOnClickListener {
+            finish()
+        }
         userInfo()
     }
 
@@ -169,7 +173,6 @@ class AccountSettingsActivity : AppCompatActivity() {
             .withOptions(options)
             .start(this)
     }
-
 
     private fun updateUserInfoOnly() {
         when{

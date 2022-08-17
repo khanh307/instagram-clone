@@ -11,9 +11,11 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.NonNull
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
+import com.example.instagram.CommentsActivity
 import com.example.instagram.Fragments.LikesFragment
 import com.example.instagram.Fragments.ProfileFragment
 import com.example.instagram.Listener.DoubleClickListener
@@ -114,6 +116,11 @@ class PostAdapter(private val mContext: Context, private val mPost: List<Post>):
                 .replace(R.id.fragment_container, LikesFragment()).commit()
         }
 
+        holder.commentButton.setOnClickListener {
+            val mIntent = Intent(mContext, CommentsActivity::class.java)
+            mIntent.putExtra("postid", post.getPostid())
+            mContext.startActivity(mIntent)
+        }
     }
 
     private fun likePostNotRemove(postid: String, likeButton: ImageView) {
@@ -131,7 +138,6 @@ class PostAdapter(private val mContext: Context, private val mPost: List<Post>):
         } else {
             return
         }
-
     }
 
 
@@ -159,7 +165,6 @@ class PostAdapter(private val mContext: Context, private val mPost: List<Post>):
                     }
                 }
         }
-
     }
 
     private fun getLikes(postid: String, likes: TextView, likeButton: ImageView){

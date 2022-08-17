@@ -34,6 +34,10 @@ class AddPostActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_post)
 
+        close_add_post_btn.setOnClickListener {
+            finish()
+        }
+
         storageProfilePicRef = FirebaseStorage.getInstance().reference.child("Posts Pictures")
         save_new_post_btn.setOnClickListener { uploadImage() }
         startActivityForResult(Intent().setAction(Intent.ACTION_GET_CONTENT).setType("image/*"), CODE_IMG_GALLERY)

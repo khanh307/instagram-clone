@@ -86,7 +86,6 @@ class HomeFragment : Fragment() {
                     for(id in (followingList as ArrayList<String>)){
                         if(post!!.getPublisher() == id){
                             postList!!.add(post)
-                            Log.d("EEE", post.getDescription().toString())
                         }
 
                         postAdapter!!.notifyDataSetChanged()

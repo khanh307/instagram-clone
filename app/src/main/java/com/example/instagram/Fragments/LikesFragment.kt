@@ -97,6 +97,7 @@ class LikesFragment : Fragment() {
                                         mUser!!.add(user)
                                     }
                                 }
+                                userAdapter!!.notifyDataSetChanged()
                             }
 
                             override fun onCancelled(error: DatabaseError) {
@@ -105,7 +106,7 @@ class LikesFragment : Fragment() {
 
                         })
                     }
-                    userAdapter!!.notifyDataSetChanged()
+
                 }
             }
 
@@ -115,6 +116,5 @@ class LikesFragment : Fragment() {
 
         })
     }
-
 
 }

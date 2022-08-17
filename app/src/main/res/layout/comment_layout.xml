@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="2dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/comment_image"
+        android:padding="2dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/profile"/>
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:id="@+id/comment_layout"
+        android:layout_toEndOf="@id/comment_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/user_name_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="user name"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:layout_toEndOf="@id/user_name_comment"
+            android:id="@+id/context_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="comment"
+            android:textColor="@android:color/black"
+            android:layout_marginLeft="10dp"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginBottom="3dp"
+        android:id="@+id/time_comment"
+        android:layout_marginLeft="10dp"
+        android:layout_toEndOf="@id/comment_image"
+        android:layout_below="@id/comment_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10:00"/>
+</RelativeLayout>
