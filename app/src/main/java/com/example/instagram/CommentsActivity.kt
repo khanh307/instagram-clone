@@ -9,6 +9,7 @@ import com.example.instagram.Adapter.CommentAdapter
 import com.example.instagram.Model.Comment
 import com.example.instagram.Model.Post
 import com.example.instagram.Model.User
+import com.google.android.material.tabs.TabLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -23,7 +24,6 @@ class CommentsActivity : AppCompatActivity() {
     private var postId: String = ""
     private var mComment: ArrayList<Comment>? = null
     private var commentAdapter: CommentAdapter? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_comments)

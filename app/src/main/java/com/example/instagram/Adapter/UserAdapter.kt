@@ -82,7 +82,6 @@ class UserAdapter(private var mContext: Context, private var mUsers : List<User>
                                         .child("Followers").child(it1.toString())
                                         .removeValue().addOnCompleteListener { task ->
                                             if (task.isSuccessful) {
-
                                             }
                                         }
                                 }
