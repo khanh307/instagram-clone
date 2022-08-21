@@ -1,6 +1,7 @@
 package com.example.instagram.Adapter
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -62,7 +63,6 @@ class UserAdapter(private var mContext: Context, private var mUsers : List<User>
                                         .child("Followers").child(it1.toString())
                                         .setValue(true).addOnCompleteListener { task ->
                                             if (task.isSuccessful) {
-
                                             }
                                         }
                                 }
@@ -104,8 +104,12 @@ class UserAdapter(private var mContext: Context, private var mUsers : List<User>
             override fun onDataChange(datasnapshot: DataSnapshot) {
                 if(datasnapshot.child(uid).exists()){
                     followButton.text = "Following"
+                    followButton.setTextColor(Color.parseColor("#f8ffff"))
+                    followButton.setBackgroundResource(R.drawable.button_follow)
                 } else {
                     followButton.text = "Follow"
+                    followButton.setTextColor(Color.parseColor("#040404"))
+                    followButton.setBackgroundResource(R.drawable.button_unfollow)
                 }
             }
 

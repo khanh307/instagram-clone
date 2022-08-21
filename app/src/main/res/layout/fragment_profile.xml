@@ -201,7 +201,7 @@
             <Button
                 android:id="@+id/edit_account_settings_btn"
                 android:layout_width="match_parent"
-                android:layout_height="32dp"
+                android:layout_height="35dp"
                 android:text="Edit profile"
                 android:textAllCaps="false"
                 android:layout_marginTop="2dp"

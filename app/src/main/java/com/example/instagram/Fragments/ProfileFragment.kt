@@ -2,6 +2,7 @@ package com.example.instagram.Fragments
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -48,6 +49,7 @@ class ProfileFragment : Fragment() {
                 getButtonText == "Edit Profile" -> startActivity(Intent(context, AccountSettingsActivity::class.java))
 
                 getButtonText == "Follow" ->{
+
                     firebaseUser?.uid.let { it1 ->
                         FirebaseDatabase.getInstance().reference
                             .child("Follow").child(it1.toString())
@@ -77,6 +79,8 @@ class ProfileFragment : Fragment() {
             }
 
         }
+
+
 
         view.layout_follower.setOnClickListener {
             val mIntent = Intent(context, FollowActivity::class.java)
@@ -113,8 +117,12 @@ class ProfileFragment : Fragment() {
                 override fun onDataChange(datasnapshot: DataSnapshot) {
                     if(datasnapshot.child(profileId).exists()){
                         view?.edit_account_settings_btn?.text = "Following"
+                        view?.edit_account_settings_btn?.setTextColor(Color.parseColor("#f8ffff"))
+                        view?.edit_account_settings_btn?.setBackgroundResource(R.drawable.button_follow)
                     } else {
                         view?.edit_account_settings_btn?.text = "Follow"
+                        view?.edit_account_settings_btn?.setTextColor(Color.parseColor("#040404"))
+                        view?.edit_account_settings_btn?.setBackgroundResource(R.drawable.button_unfollow)
                     }
                 }
 
@@ -175,11 +183,11 @@ class ProfileFragment : Fragment() {
                 if(snapshot.exists()){
                     var user = snapshot.getValue<User>(User::class.java)
 
-                    Picasso.get().load(user!!.getImage()).placeholder(R.drawable.profile)
-                        .into(view!!.pro_image_profile_frag)
-                    view?.profile_fragment_username?.text = user!!.getUsername()
-                    view?.full_name_profile_frag?.text = user!!.getFullname()
-                    view?.bio_profile_frag?.text = user!!.getBio()
+                    Picasso.get().load(user?.getImage()).placeholder(R.drawable.profile)
+                        .into(view?.pro_image_profile_frag)
+                    view?.profile_fragment_username?.text = user?.getUsername()
+                    view?.full_name_profile_frag?.text = user?.getFullname()
+                    view?.bio_profile_frag?.text = user?.getBio()
                 }
             }
 
